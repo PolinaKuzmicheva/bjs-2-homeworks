@@ -68,9 +68,10 @@ class Library {
   constructor(name) {
     this.name = name;
     this.books = [];
+    this.state = 100;
   }
   addBook(book) {
-    if (this.state > 30) {
+    if (book.state > 30) {
       this.books.push(book);
     }
   }
@@ -109,10 +110,13 @@ class Student {
     if (subject = -1) {
       console.log ('Несуществующий предмет')
           }
-    let sum = this.marks[subject].reduce((acc, cv) => {
-      return acc + cv;
-  }, 0);
+    let sum = this.marks[subject].reduce((acc, cv) => acc + cv);
     return `Средний балл по предмету${subject}${sum / this.marks[subject].length}`;
+  }
+
+  getAverage (){
+   let totalSum = this.marks.reduce((acc,cv) => acc + cv);
+   return `Средний балл по всем предметам${totalSum / this.marks.length}`;
   }
 }
 
