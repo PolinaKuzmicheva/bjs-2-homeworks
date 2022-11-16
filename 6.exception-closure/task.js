@@ -1,6 +1,6 @@
 function parseCount (value) {
   const parsed = Number.parseInt(value);
-  if (isNaNn(parsed)) {
+  if (isNaN(parsed)) {
     throw new Error('Невалидное значение');
   }
   return parsed;
@@ -10,7 +10,7 @@ function validateCount (value) {
   try {
   return parseCount(value)
   } catch(error) {
-    console.log(error);
+    return error;
   }
 }
 
