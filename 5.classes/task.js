@@ -92,7 +92,7 @@ class Library {
 class Student {
   constructor(name) {
     this.name = name;
-    this.marks = [];
+    this.marks = {};
   }
 
   addMark(mark, subject) {
@@ -111,7 +111,7 @@ class Student {
       console.log ('Несуществующий предмет')
           }
     let sum = this.marks[subject].reduce((acc, cv) => acc + cv);
-    return `Средний балл по предмету${subject}${sum / this.marks[subject].length}`;
+    return sum / this.marks[subject].length;
   }
 
   getAverage (){
